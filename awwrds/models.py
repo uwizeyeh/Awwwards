@@ -8,7 +8,7 @@ class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
     bio = HTMLField()
-    profile_pic = models.ImageField(upload_to='imag/')
+    profile_pic = models.ImageField(upload_to='images/')
     pub_date = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
@@ -33,7 +33,7 @@ class Profile(models.Model):
 class Project(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     project_name = models.CharField(max_length=30)
-    image = models.ImageField(upload_to='imag/')
+    image = models.ImageField(upload_to='images/')
     description = HTMLField()
     project_url = models.CharField(max_length=100)
     technologies_used = HTMLField()
