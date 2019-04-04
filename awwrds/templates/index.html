@@ -20,9 +20,9 @@
           </div>
           <br>
           <br>
-    
+          <div class="well">
       <div class="well">
-         <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">VIEW ALL PROFILES</button>
+         <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">VIEW ALL PROFILES</button></div>
       <div id="demo" class="collapse">
           
 
@@ -34,7 +34,7 @@
          {% endfor %}         
             
          </div> 
-      </div>
+      
             {% for profs in project %}
             
             <a href="/images/{{profs.id}}"><img src="{{profs.image.url}}" alt="Image" style="border-radius:10px;"></a>
@@ -42,10 +42,12 @@
             <div class="row">
                <div class="col-md-6"><button><a href="/votes/{{profs.id}}"><strong>RATE</strong></a></button></div>
             </div>
+         
             <!-- <div class="col-md-6"><button><a href="/comments/{{profs.id}}"><strong>REVIEW</strong></a></button></div> -->
             
             {% endfor %}
      </div>
+   </div>
 </body>
 
 {% endblock %}
