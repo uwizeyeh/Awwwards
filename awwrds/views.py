@@ -20,8 +20,7 @@ def index(request):
 
 @login_required(login_url='/accounts/login/')
 def images(request,project_id):
-    project = Project.objects.get(id = project_id)
-    comments = Comments.objects.filter(project = project.id).all() 
+    project = Project.objects.get(id = project_id) 
     votes = Votes.objects.filter(project = project.id).all() 
     return render(request,"pro.html", {"project":project,"votes":votes})
 
@@ -42,7 +41,7 @@ def profile(request):
             profile.user = current_user
             profile.save()
 
-            return redirect('index')
+            return redirect(index)
 
     else:
         form = ProfileForm()
@@ -57,7 +56,7 @@ def project(request):
             project.user = current_user
             project.save()
 
-            return redirect('index')
+            return redirect(index)
 
     else:
         form = ProjectForm()

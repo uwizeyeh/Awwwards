@@ -41,7 +41,7 @@
             <div class="row">
                     <div class="col-md-6"> {% for hi in comments %}
         
-                            <p style="color: black;">><strong>{{hi.user}} : {{hi.comment}}</strong></p>
+                            <p style="color: cyan;">><strong>{{hi.user}} : {{hi.comment}}</strong></p>
                            
                             {% endfor %}
                             <br>
@@ -52,9 +52,9 @@
                     
                         {% for hi in votes %}
         
-                        <p style="background-color: black;">{{hi.content}}</p>
-                        <p style="background-color: black;">{{hi.usability}}</p>
-                        <p style="background-color: black;">{{hi.design}}</p>
+                        <p style="background-color: grey;">{{hi.content}}</p>
+                        <p style="background-color: gray;">{{hi.usability}}</p>
+                        <p style="background-color: grey;">{{hi.design}}</p>
         
                         {% endfor %}
                 
