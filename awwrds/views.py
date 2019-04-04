@@ -23,7 +23,7 @@ def images(request,project_id):
     project = Project.objects.get(id = project_id)
     comments = Comments.objects.filter(project = project.id).all() 
     votes = Votes.objects.filter(project = project.id).all() 
-    return render(request,"pro.html", {"project":project,"comments":comments,"votes":votes})
+    return render(request,"pro.html", {"project":project,"votes":votes})
 
 @login_required(login_url='/accounts/login/')
 def myProfile(request,id):

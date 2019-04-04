@@ -23,11 +23,13 @@
               <li>
                 <a href="{%url 'welcome'%}">Home</a>
               </li>
+              {% if request.user.profile %}
               <li>
-                <a href="{%url 'myProfile' user.id%}"><strong>View Profile</strong></a>
+                <a href=" {% url 'myProfile' user.id %}"><strong>View Profile</strong></a>
               </li>
+              {% endif %}
               <li>
-                  <a href="{%url 'profile'%}"><strong>Add Profile</strong></a>
+                  <a href="/profile"><strong>Add Profile</strong></a>
                 </li>
               <li>
               <li>
@@ -44,7 +46,7 @@
 
         <div class="nav navbar-nav navbar-right">
 
-            <button class="well"><a href="{%url 'project'%}"   style="text-align: center;padding-left:50px;font-family: monospace;color:black;"><strong>POST PROJECT</strong></a></button>
+            <button class="well"><a href="/project"   style="text-align: center;padding-left:50px;font-family: monospace;color:black;"><strong>POST PROJECT</strong></a></button>
      
            </div>
 

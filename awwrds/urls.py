@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 
 
 urlpatterns=[
-    url(r'$', views.index, name='welcome'),
+    url(r'^$', views.index, name='welcome'),
     url(r'^profile/', views.profile, name='profile'),
     url(r'^myProfile/(\d+)', views.myProfile, name='myProfile'),
     url(r'^project/', views.project, name='project'),
