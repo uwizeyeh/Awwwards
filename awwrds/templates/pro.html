@@ -2,9 +2,10 @@
 
  {% block content %}
 
- <body>
+ <body style="background-color:darkkhaki ">
 
  <div class="container">
+    <div class="well">
      <div class="row">
      <div class="col-md-5">
             <div class="row" style="color:rgb(108, 122, 122);font-family: monospace;">
@@ -15,7 +16,7 @@
     
         <div class="row">
             <img src="{{project.image.url}}"  class="img-responsive" alt="">
-        </div>
+        
         
         <div class="row" style="color:rgb(99, 110, 110);font-family: monospace;">
             <h4 ><strong>Posted on: {{project.posted_on}}</strong></h4>
@@ -23,19 +24,19 @@
     
      </div>
      <div class="col-md-7">
-            <a href="{{project.project_url}}" target="_blank">INSTA G</a>
+            <a href="{{project.project_url}}" target="_blank">CLICK HERE FOR MORE</a>
             <div class="row" style="color:rgb(99, 110, 110);font-family: monospace;">
-                <h4 ><strong>{% autoescape on %}
-                    {{project.description| safe}}
+                <h2>{% autoescape on %} </h2>
+                    <p><strong> Project</strong>: {{project.description| safe}}</p>
                    {% endautoescape %}
-                </strong></h4>
+               
             </div>
                
             <div class="row" style="color:rgb(99, 110, 110);font-family: monospace;">
-                <h4 ><strong>{% autoescape on %}
-                    {{project.technologies_used| safe}}
+                <h2 >{% autoescape on %}  </h2>
+                    <p><strong> Technologie used</strong>: {{project.technologies_used| safe}}</p>
                    {% endautoescape %}
-                </strong></h4>
+              
             </div>
         
             <div class="row">
@@ -50,11 +51,11 @@
                     </div>
                     <div class="col-md-6">
                     
-                        {% for hi in votes %}
-        
-                        <p style="background-color: grey;">{{hi.content}}</p>
-                        <p style="background-color: gray;">{{hi.usability}}</p>
-                        <p style="background-color: grey;">{{hi.design}}</p>
+                        {% for vo in votes %}
+    
+                        <p style="background-color: rgb(151, 125, 85);">Content:{{vo.content}}</p>
+                        <p style="background-color: rgb(243, 217, 130);">Usability:{{vo.usability}}</p>
+                        <p style="background-color: rgb(245, 183, 125);">Design:{{vo.design}}</p>
         
                         {% endfor %}
                 
@@ -65,6 +66,8 @@
                
         {% endblock %}
      </div>
+    </div>
+    </div>
     </div>       
     
 </body>

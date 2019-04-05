@@ -77,7 +77,7 @@ def votes(request,id):
                 content = vote.cleaned_data['content']
                 rating = Votes(design=design,usability=usability,content=content,user=request.user,project=post)
                 rating.save()
-                return redirect('project')      
+                return redirect(index)      
     else:
         form = VotesForm()
         return render(request, 'vote.html', {"form":form,'post':post,'user':current_user,'votes':votes})
